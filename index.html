@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochi Bun Studio | Cute art and websites, made to order</title>
+  <meta name="description" content="Mochi Bun Studio draws cute character art and builds small websites on commission. See prices, how it works, and order online.">
+  <meta name="theme-color" content="#ffb6c1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍡%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts: Fredoka for headings, Poppins for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <noscript>
+    <!-- Without JavaScript, show every stage at once instead of a tabbed stepper -->
+    <style>
+      .step-panel[hidden] { display: block !important; margin-top: 1rem; }
+      .step-track { display: none; }
+    </style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <noscript><p class="noscript-note">The bun, filters, and order form need JavaScript. Please turn it on in your browser.</p></noscript>
+
+  <!-- Tiny bun logo, reused in the header -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="mini-bun" viewBox="0 0 48 48">
+      <path d="M6 30C6 16 15 8 24 8s18 8 18 22c0 7-7 10-18 10S6 37 6 30Z" fill="#fff" stroke="#4a2c3a" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="18" cy="27" r="2" fill="#4a2c3a"/>
+      <circle cx="30" cy="27" r="2" fill="#4a2c3a"/>
+      <ellipse cx="13.5" cy="31.5" rx="3" ry="2" fill="#ffb6c1"/>
+      <ellipse cx="34.5" cy="31.5" rx="3" ry="2" fill="#ffb6c1"/>
+      <path d="M21.5 31.5q2.5 2.5 5 0" fill="none" stroke="#4a2c3a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M24 9c-4-2.5-4-7 0-9 4 2 4 6.5 0 9Z" fill="#ffb6c1" stroke="#4a2c3a" stroke-width="2" transform="translate(0 2) rotate(-18 24 9)"/>
+    </symbol>
+  </svg>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Mochi Bun Studio, back to top">
+        <svg width="38" height="38" aria-hidden="true"><use href="#mini-bun"/></svg>
+        Mochi Bun Studio
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M4 7h18M4 13h18M4 19h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#services">What I make</a></li>
+          <li><a href="#works">Past Works</a></li>
+          <li><a href="#stages">Stages</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#terms">Terms &amp; Conditions</a></li>
+          <li><a class="nav-cta" href="#order">Order</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1>Cute art and cozy websites, made just for you</h1>
+          <p class="lead">
+            I draw people from your photos, like you and your spouse,
+            and I build small websites, all on commission.
+            Order one, the other, or both together.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#order">Order a commission</a>
+            <a class="btn" href="#services">See what I make</a>
+          </div>
+        </div>
+
+        <!-- The one playful moment: poke the bun -->
+        <div class="bun-stage">
+          <p class="bun-says" id="bun-says" role="status">Poke me!</p>
+          <button class="bun" id="bun" type="button" aria-label="Poke the mochi bun">
+            <svg viewBox="0 0 240 220" aria-hidden="true" focusable="false">
+              <ellipse cx="120" cy="198" rx="92" ry="14" fill="#c2255c" opacity=".14"/>
+              <g class="bun-squisher">
+                <path d="M36 150C36 84 76 46 120 46s84 38 84 104c0 30-32 46-84 46S36 180 36 150Z" fill="#fff" stroke="#4a2c3a" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M60 172c26 18 94 18 120 0-6 14-32 22-60 22s-54-8-60-22Z" fill="#ffe4ec"/>
+                <g class="eyes-open">
+                  <circle cx="92" cy="130" r="7" fill="#4a2c3a"/>
+                  <circle cx="148" cy="130" r="7" fill="#4a2c3a"/>
+                  <circle cx="94.5" cy="127.5" r="2.3" fill="#fff"/>
+                  <circle cx="150.5" cy="127.5" r="2.3" fill="#fff"/>
+                </g>
+                <g class="eyes-happy" fill="none" stroke="#4a2c3a" stroke-width="4" stroke-linecap="round">
+                  <path d="M83 133q9-14 18 0"/>
+                  <path d="M139 133q9-14 18 0"/>
+                </g>
+                <ellipse cx="72" cy="150" rx="12" ry="7" fill="#ffb6c1"/>
+                <ellipse cx="168" cy="150" rx="12" ry="7" fill="#ffb6c1"/>
+                <path class="mouth-smile" d="M111 146q9 9 18 0" fill="none" stroke="#4a2c3a" stroke-width="4" stroke-linecap="round"/>
+                <path class="mouth-happy" d="M107 144q13 24 26 0Z" fill="#e8708f" stroke="#4a2c3a" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M120 50C104 40 104 20 120 10c16 10 16 30 0 40Z" fill="#ffb6c1" stroke="#4a2c3a" stroke-width="3.5" stroke-linejoin="round" transform="rotate(-18 120 50)"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <ul class="facts" aria-label="Quick facts">
+          <li><span aria-hidden="true">⏱️</span> Standard deadline is 5 days</li>
+          <li><span aria-hidden="true">✏️</span> Two rough sketches to choose from</li>
+          <li><span aria-hidden="true">✅</span> You approve every stage</li>
+          <li><span aria-hidden="true">📦</span> Delivered digitally</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== What I make ===== -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <h2>What I make</h2>
+        <p class="section-intro">
+          Pick art, a website, or both together.
+        </p>
+
+        <div class="service-grid">
+          <article class="service service-art" style="--card:#ffd9e5; --shade:#f29ab3;">
+            <h3>Art of people</h3>
+            <p>Digital illustrations of the people you choose, drawn from your reference photos. Solo or together, like you and your spouse.</p>
+            <ul class="service-list">
+              <li><strong>Chibi:</strong> simplified proportions, cute style</li>
+              <li><strong>Medium:</strong> balanced detail, proportional</li>
+              <li><strong>Full‑Scale:</strong> full proportion, detailed shading and lighting</li>
+            </ul>
+            <p class="service-note">You send reference photos of everyone in the picture, and they need to be okay with it.</p>
+            <p class="service-price">From <span class="money" data-min="200">$200 MXN</span></p>
+            <a class="btn" href="#pricing" data-filter="art">See art prices</a>
+          </article>
+
+          <div class="combine" aria-hidden="true">+</div>
+
+          <article class="service service-web" style="--card:#d9f2e3; --shade:#9fd4b5;">
+            <h3>Websites</h3>
+            <p>A basic website for you or your project, with the design included.</p>
+            <ul class="service-list">
+              <li>1–2 pages</li>
+              <li>Built with HTML and CSS</li>
+              <li>Design included</li>
+            </ul>
+            <p class="service-price">From <span class="money" data-min="600">$600 MXN</span></p>
+            <a class="btn" href="#pricing" data-filter="website">See website prices</a>
+          </article>
+
+          <div class="combine combine-equals" aria-hidden="true">=</div>
+
+          <article class="service service-fusion" style="--card:#e9defa; --shade:#c3aee8;">
+            <div class="fusion-copy">
+              <h3>Premium Fusion</h3>
+              <p>
+                Can't pick one? Get a website with custom art built into it,
+                all from one person in one project.
+              </p>
+              <ul class="service-list">
+                <li>Everything in a standard website</li>
+                <li>Plus custom art integrated into the site</li>
+              </ul>
+            </div>
+            <div class="fusion-buy">
+              <p class="service-price">From <span class="money" data-min="800">$800 MXN</span></p>
+              <a class="btn" href="#pricing" data-filter="premium">See Premium prices</a>
+            </div>
+          </article>
+
+          <p class="service-more">Or surprise someone</p>
+
+          <article class="service service-deluxe" style="--card:#fff0c2; --shade:#e8cf7a;">
+            <div class="deluxe-copy">
+              <h3>Deluxe Gift Website</h3>
+              <p>
+                A website made as a gift. The person opens it, lets the site use their camera,
+                and when the site recognizes their face it reacts. For example, photos of them
+                appear on the screen. Or tell me what you'd like it to do.
+              </p>
+              <div class="photo-note">
+                <p class="photo-note-title">What I need from you</p>
+                <p>
+                  Photos of that person from as many angles as possible. More angles help the
+                  recognition work. I do not store photos or share them with third parties.
+                </p>
+              </div>
+            </div>
+            <div class="deluxe-buy">
+              <p class="service-price"><span class="money" data-min="600" data-max="900" data-plus>$600–900+ MXN</span></p>
+              <a class="btn" href="#pricing" data-filter="deluxe">See Deluxe price</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Past works ===== -->
+    <section class="section section-blush" id="works">
+      <div class="wrap">
+        <h2>Past Works</h2>
+        <p class="section-intro">Tap any piece to see it bigger.</p>
+
+        <ul class="gallery">
+          <li><button class="work" type="button"><img src="images/work1.png" alt="Past work 1" loading="lazy"></button></li>
+          <li><button class="work" type="button"><img src="images/work2.png" alt="Past work 2" loading="lazy"></button></li>
+          <li><button class="work" type="button"><img src="images/work3.png" alt="Past work 3" loading="lazy"></button></li>
+        </ul>
+      </div>
+
+      <dialog class="lightbox" id="lightbox" aria-label="Artwork viewer">
+        <div class="lb-inner">
+          <button class="lb-btn lb-close" type="button" aria-label="Close viewer">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M5 5l12 12M17 5L5 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </button>
+          <button class="lb-btn lb-prev" type="button" aria-label="Previous piece">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M14 4L7 11l7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <figure>
+            <img src="" alt="">
+            <figcaption></figcaption>
+          </figure>
+          <button class="lb-btn lb-next" type="button" aria-label="Next piece">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M8 4l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </dialog>
+    </section>
+
+    <!-- ===== Stages ===== -->
+    <section class="section" id="stages">
+      <div class="wrap wrap-narrow">
+        <h2>Stages</h2>
+        <p class="section-intro">
+          This is how an art commission goes. Every stage ends with your approval
+          before I move on to the next one.
+        </p>
+
+        <div class="stepper">
+          <div class="step-track" role="tablist" aria-label="Commission stages">
+            <button class="step-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" type="button">
+              <span class="step-num">1</span><span class="step-name">Sketching</span>
+            </button>
+            <button class="step-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1" type="button">
+              <span class="step-num">2</span><span class="step-name">Line Art</span>
+            </button>
+            <button class="step-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1" type="button">
+              <span class="step-num">3</span><span class="step-name">Coloring</span>
+            </button>
+            <button class="step-tab" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1" type="button">
+              <span class="step-num">4</span><span class="step-name">Final Touches</span>
+            </button>
+          </div>
+
+          <section class="step-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+            <h3>Sketching</h3>
+            <dl class="step-facts">
+              <div><dt>What I do</dt><dd>Draw two rough sketches based on your references and ideas.</dd></div>
+              <div><dt>What you do</dt><dd>Choose the sketch you like best and tell me what to adjust.</dd></div>
+            </dl>
+            <button class="btn" type="button" data-goto-stage="1">Next: Line Art</button>
+          </section>
+
+          <section class="step-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+            <h3>Line Art</h3>
+            <dl class="step-facts">
+              <div><dt>What I do</dt><dd>Turn the approved sketch into clean line art.</dd></div>
+              <div><dt>What you do</dt><dd>Review it and approve it before I start coloring.</dd></div>
+            </dl>
+            <button class="btn" type="button" data-goto-stage="2">Next: Coloring</button>
+          </section>
+
+          <section class="step-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+            <h3>Coloring</h3>
+            <dl class="step-facts">
+              <div><dt>What I do</dt><dd>Add color to the approved line art.</dd></div>
+              <div><dt>What you do</dt><dd>Approve the colors before I add the final details.</dd></div>
+            </dl>
+            <button class="btn" type="button" data-goto-stage="3">Next: Final Touches</button>
+          </section>
+
+          <section class="step-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+            <h3>Final Touches</h3>
+            <dl class="step-facts">
+              <div><dt>What I do</dt><dd>Add the final details, lighting, and shading.</dd></div>
+              <div><dt>What you do</dt><dd>Approve the result. Once you do, the commission is complete and I deliver it digitally through Google Drive or email.</dd></div>
+            </dl>
+            <a class="btn btn-primary" href="#order">Order a commission</a>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section class="section section-blush" id="pricing">
+      <div class="wrap">
+        <h2>Pricing</h2>
+        <p class="section-intro">Prices may vary depending on complexity and deadlines.</p>
+
+        <div class="controls">
+          <fieldset class="pill-group">
+            <legend class="sr-only">Show</legend>
+            <label class="pill"><input type="radio" name="filter" value="all" checked><span>All</span></label>
+            <label class="pill"><input type="radio" name="filter" value="art"><span>Art</span></label>
+            <label class="pill"><input type="radio" name="filter" value="website"><span>Websites</span></label>
+            <label class="pill"><input type="radio" name="filter" value="premium"><span>Premium</span></label>
+            <label class="pill"><input type="radio" name="filter" value="deluxe"><span>Deluxe</span></label>
+          </fieldset>
+
+          <fieldset class="pill-group">
+            <legend class="sr-only">Currency</legend>
+            <label class="pill"><input type="radio" name="currency" value="MXN" checked><span>MXN</span></label>
+            <label class="pill"><input type="radio" name="currency" value="USD"><span>USD</span></label>
+            <label class="pill"><input type="radio" name="currency" value="EUR"><span>EUR</span></label>
+          </fieldset>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card" data-id="chibi" data-name="Chibi" data-type="art" data-min="200" data-max="250">
+            <span class="badge badge-art">Art</span>
+            <h3>Chibi</h3>
+            <p>Simplified proportions, cute style</p>
+            <p class="price money" data-min="200" data-max="250">$200–250 MXN</p>
+            <a class="btn" href="#order" data-choose="chibi">Order this</a>
+          </article>
+
+          <article class="price-card" data-id="medium" data-name="Medium" data-type="art" data-min="350" data-max="400">
+            <span class="badge badge-art">Art</span>
+            <h3>Medium</h3>
+            <p>Balanced detail, proportional</p>
+            <p class="price money" data-min="350" data-max="400">$350–400 MXN</p>
+            <a class="btn" href="#order" data-choose="medium">Order this</a>
+          </article>
+
+          <article class="price-card" data-id="full-scale" data-name="Full‑Scale" data-type="art" data-min="550" data-max="650">
+            <span class="badge badge-art">Art</span>
+            <h3>Full‑Scale</h3>
+            <p>Full proportion, detailed shading &amp; lighting</p>
+            <p class="price money" data-min="550" data-max="650">$550–650 MXN</p>
+            <a class="btn" href="#order" data-choose="full-scale">Order this</a>
+          </article>
+
+          <article class="price-card" data-id="website" data-name="Standard Website" data-type="website" data-min="600" data-max="800">
+            <span class="badge badge-web">Website</span>
+            <h3>Standard Website</h3>
+            <p>Basic site (1–2 pages, HTML/CSS, design)</p>
+            <p class="price money" data-min="600" data-max="800">$600–800 MXN</p>
+            <a class="btn" href="#order" data-choose="website">Order this</a>
+          </article>
+
+          <article class="price-card" data-id="premium" data-name="Premium Fusion" data-type="premium" data-min="800" data-max="1200">
+            <span class="badge badge-premium">Premium</span>
+            <h3>Premium Fusion</h3>
+            <p>Website + custom art integration</p>
+            <p class="price money" data-min="800" data-max="1200">$800–1200 MXN</p>
+            <a class="btn" href="#order" data-choose="premium">Order this</a>
+          </article>
+
+          <article class="price-card" data-id="deluxe" data-name="Deluxe Gift Website" data-type="deluxe" data-min="600" data-max="900" data-plus="true">
+            <span class="badge badge-deluxe">Deluxe</span>
+            <h3>Deluxe Gift Website</h3>
+            <p>A gift website that recognizes the recipient's face and shows photos of them on screen. Needs photos from many angles.</p>
+            <p class="price money" data-min="600" data-max="900" data-plus>$600–900+ MXN</p>
+            <a class="btn" href="#order" data-choose="deluxe">Order this</a>
+          </article>
+        </div>
+
+        <p class="fine-print">
+          Prices are listed in MXN. USD and EUR amounts are approximate conversions. A + means the final price can be higher depending on the project.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Order ===== -->
+    <section class="section" id="order">
+      <div class="wrap">
+        <h2>Order a commission</h2>
+        <p class="section-intro">
+          Fill this in and I'll write your request for you. Then copy it and send it to me.
+        </p>
+
+        <div class="order-grid">
+          <form class="card order-form" id="order-form" novalidate>
+            <div class="field">
+              <label for="order-type">What would you like?</label>
+              <select id="order-type">
+                <option value="" selected disabled>Choose a type</option>
+                <optgroup label="Art">
+                  <option value="chibi">Chibi</option>
+                  <option value="medium">Medium</option>
+                  <option value="full-scale">Full‑Scale</option>
+                </optgroup>
+                <optgroup label="Website">
+                  <option value="website">Standard Website</option>
+                </optgroup>
+                <optgroup label="Both">
+                  <option value="premium">Premium Fusion</option>
+                </optgroup>
+                <optgroup label="Gift website">
+                  <option value="deluxe">Deluxe Gift Website</option>
+                </optgroup>
+              </select>
+              <p class="field-note" id="deluxe-note" hidden>
+                Deluxe needs photos of the person you're gifting it to, from as many angles as possible.
+                I do not store photos or share them with third parties.
+              </p>
+            </div>
+
+            <label class="check-row">
+              <input type="checkbox" id="order-rush">
+              <span>I need it in under 5 days (rush)</span>
+            </label>
+
+            <div class="field">
+              <label for="order-name">Your name <span class="optional">(optional)</span></label>
+              <input id="order-name" type="text" autocomplete="name">
+            </div>
+
+            <div class="field">
+              <label for="order-idea">Tell me about your idea</label>
+              <textarea id="order-idea" rows="5" placeholder="Who should I draw or build this for? Describe the people, mood, outfits, and what you want the result to look like."></textarea>
+            </div>
+
+            <label class="check-row">
+              <input type="checkbox" id="order-consent">
+              <span>I've read the <a href="#terms">terms</a>, and any reference photos I share have the consent of the person depicted.</span>
+            </label>
+          </form>
+
+          <aside class="card card-blush order-preview" aria-labelledby="preview-title">
+            <h3 id="preview-title">Your request</h3>
+            <p class="estimate">Estimated price: <strong id="order-estimate">Choose a type to see an estimate</strong></p>
+            <p class="rush-note" id="rush-note" hidden>Shorter deadlines cost extra. I'll confirm the final price when I reply.</p>
+
+            <label class="sr-only" for="order-message">Message to send</label>
+            <textarea id="order-message" readonly rows="11" placeholder="Your message will appear here as you fill in the form."></textarea>
+
+            <div class="order-actions">
+              <button class="btn btn-primary" type="button" id="copy-message" disabled>Copy message</button>
+              <button class="btn" type="button" id="email-message" disabled hidden>Email this to me</button>
+            </div>
+            <p class="hint" id="order-hint"></p>
+            <p class="status" id="order-status" role="status"></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Terms ===== -->
+    <section class="section section-blush" id="terms">
+      <div class="wrap wrap-narrow">
+        <h2>Terms &amp; Conditions</h2>
+        <p class="section-intro">Please read these before ordering. Tap a heading to open it.</p>
+
+        <div class="terms-tools">
+          <button class="btn btn-small" type="button" id="toggle-terms">Expand all</button>
+        </div>
+
+        <div class="terms">
+          <details>
+            <summary>General Terms</summary>
+            <div class="terms-body">
+              <ul>
+                <li>Reference photos must be shared with consent of the person depicted.</li>
+                <li>No inappropriate requests will be accepted.</li>
+                <li>Privacy is respected; do not ask for personal information.</li>
+                <li>I reserve the right to decline service if terms are violated or communication is unprofessional.</li>
+                <li>Payment must be made upfront after the initial sketch approval; no refunds after this stage.</li>
+                <li>No third‑party involvement; all communication remains between client and artist.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Commission Process</summary>
+            <div class="terms-body">
+              <ol>
+                <li>Payment is made upfront after the initial agreement.</li>
+                <li>Two rough sketches are provided; the client approves one.</li>
+                <li>Line art is created and must be approved before continuing.</li>
+                <li>Coloring is completed and must be approved before continuing.</li>
+                <li>Final details, lighting, and shading are added; once approved, the commission is complete.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details>
+            <summary>Things to Keep in Mind</summary>
+            <div class="terms-body">
+              <ul>
+                <li>Standard deadline is 5 days; shorter deadlines increase the price.</li>
+                <li>Redos are possible after the sketch stage if deadlines are extended.</li>
+                <li>Refunds are only available before sketch approval.</li>
+                <li>Feedback and adjustments are welcome to ensure satisfaction.</li>
+                <li>Physical features will not be altered unless requested.</li>
+                <li>Level of stylization is up to the client.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Deluxe Gift Website and Photos</summary>
+            <div class="terms-body">
+              <ul>
+                <li>The Deluxe Gift Website recognizes the face of the person you're gifting it to, so I need photos of that person from as many angles as possible.</li>
+                <li>Your photos are used only to build your gift. I do not store photos or share them with third parties.</li>
+                <li>Recognition works best with clear, well-lit photos. Results can vary with lighting and camera quality.</li>
+                <li>The listed price is a starting range and can go higher depending on what you want the site to do.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Privacy Policy</summary>
+            <div class="terms-body">
+              <p>
+                All client information, references, and communication are kept confidential.
+                Personal details such as addresses, phone numbers, or private data will never be requested, stored, or shared.
+                Only art‑related references are accepted, and any files provided are used solely for the commission.
+                Finished works may be displayed in my portfolio unless the client requests otherwise.
+                No client information will be sold, transferred, or disclosed to third parties.
+                Communication remains professional and limited to the project.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Payment Policy</summary>
+            <div class="terms-body">
+              <p>
+                Payments are accepted through PayPal (preferred) or other agreed methods.
+                An invoice will be sent once the initial sketch is approved, and full payment must be completed before continuing to line art.
+                Refunds are only available before sketch approval.
+                All prices are listed in MXN with approximate EUR and USD conversions for clarity.
+                Clients agree to complete payment promptly to avoid delays.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Additional Terms</summary>
+            <div class="terms-body">
+              <p>
+                Finished artwork will be delivered digitally through Google Drive or email, unless otherwise agreed.
+                Clients are responsible for providing clear references and timely feedback during approval stages.
+                The artist retains the right to display completed works in a portfolio unless privacy is requested.
+                The artist is not liable for misuse, alteration, or redistribution of the artwork once delivered.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>© 2026 Mochi Bun Studio | Designed with care</p>
+  </footer>
+
+  <!-- =====================================================
+       SETTINGS: edit this block.
+       Put your email between the quotes on the "email" line,
+       for example  email: "you@gmail.com",
+       Leave it as "" to hide the "Email this to me" button.
+       USD and EUR prices are worked out from the MXN price
+       using the rates below (about 18.5 MXN per 1 USD and
+       20 MXN per 1 EUR). Change the numbers when rates move.
+       ===================================================== -->
+  <script>
+    window.MOCHI_CONFIG = {
+      email: "paktos@msn.com",
+      studioName: "Mochi Bun Studio",
+      rates: { MXN: 1, USD: 1 / 18.5, EUR: 1 / 20 },
+      defaultCurrency: "MXN"
+    };
+  </script>
+
+  <!-- Interactivity (bun, gallery, stages, prices, order form, terms). You don't need to edit this. -->
+  <script>
+(() => {
+  "use strict";
+
+  /* Settings come from the MOCHI_CONFIG block above this script. */
+  const CONFIG = Object.assign(
+    {
+      email: "",
+      studioName: "Mochi Bun Studio",
+      rates: { MXN: 1, USD: 1 / 18.5, EUR: 1 / 20 },
+      defaultCurrency: "MXN",
+    },
+    window.MOCHI_CONFIG
+  );
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+
+  // Each feature runs on its own, so if one breaks the others keep working.
+  // Open the browser console (F12) to see which one stopped and why.
+  const run = (name, fn) => {
+    try {
+      fn();
+    } catch (err) {
+      console.error(`[Mochi Bun Studio] "${name}" stopped working:`, err);
+    }
+  };
+
+  /* ---------- Shared state ---------- */
+
+  const SYMBOL = { MXN: "$", USD: "US$", EUR: "€" };
+  let currency = CONFIG.defaultCurrency;
+  const priceCards = $$(".price-card");
+  let updateQuote = () => {}; // replaced by the order builder below
+
+  function formatRange(minMxn, maxMxn, cur, plus = false) {
+    const rate = CONFIG.rates[cur];
+    const lo = Math.round(minMxn * rate);
+    const hi = Math.round(maxMxn * rate);
+    const amount = lo === hi ? `${lo}` : `${lo}–${hi}`;
+    const suffix = cur === "MXN" ? " MXN" : "";
+    return `${SYMBOL[cur]}${amount}${plus ? "+" : ""}${suffix}`;
+  }
+
+  function updatePrices() {
+    $$(".money").forEach((el) => {
+      const min = Number(el.dataset.min);
+      const max = el.dataset.max ? Number(el.dataset.max) : min;
+      el.textContent = formatRange(min, max, currency, el.hasAttribute("data-plus"));
+    });
+    updateQuote();
+  }
+
+  /* ---------- Mobile menu ---------- */
+
+  run("menu", () => {
+    const navToggle = $(".nav-toggle");
+    const nav = $("#site-nav");
+
+    const setMenu = (open) => {
+      nav.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+    };
+
+    navToggle.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+    $$("a", nav).forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("is-open")) {
+        setMenu(false);
+        navToggle.focus();
+      }
+    });
+  });
+
+  /* ---------- Highlight the section you're reading ---------- */
+
+  run("section highlight", () => {
+    if (!("IntersectionObserver" in window)) return;
+    const navLinks = $$('.nav-list a[href^="#"]:not(.nav-cta)');
+    const linkById = new Map(navLinks.map((a) => [a.getAttribute("href").slice(1), a]));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((a) => {
+            a.classList.remove("is-active");
+            a.removeAttribute("aria-current");
+          });
+          const active = linkById.get(entry.target.id);
+          if (active) {
+            active.classList.add("is-active");
+            active.setAttribute("aria-current", "location");
+          }
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    linkById.forEach((_, id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+  });
+
+  /* ---------- The poke-able bun ---------- */
+
+  run("bun", () => {
+    const bun = $("#bun");
+    const bunSays = $("#bun-says");
+    const phrases = [
+      "Boing!",
+      "Squish squish!",
+      "Mochi!",
+      "Psst, check the prices below",
+      "Again, again!",
+      "Pick a type and order me",
+    ];
+    let pokes = 0;
+    let calmTimer;
+
+    bun.addEventListener("click", () => {
+      bun.classList.remove("squish");
+      void bun.offsetWidth; // restart the animation if it's already playing
+      bun.classList.add("squish", "is-happy");
+      bunSays.textContent = phrases[pokes % phrases.length];
+      pokes += 1;
+      clearTimeout(calmTimer);
+      calmTimer = setTimeout(() => bun.classList.remove("is-happy"), 1400);
+    });
+  });
+
+  /* ---------- Gallery lightbox ---------- */
+
+  run("gallery", () => {
+    const works = $$(".work");
+    const lightbox = $("#lightbox");
+    const lbImg = $("img", lightbox);
+    const lbCaption = $("figcaption", lightbox);
+    let currentWork = 0;
+
+    const isMissing = (i) => works[i].classList.contains("is-missing");
+
+    const showWork = (index) => {
+      currentWork = (index + works.length) % works.length;
+      const img = $("img", works[currentWork]);
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = img.alt;
+    };
+
+    const stepWork = (direction) => {
+      for (let tries = 0; tries < works.length; tries += 1) {
+        currentWork = (currentWork + direction + works.length) % works.length;
+        if (!isMissing(currentWork)) break;
+      }
+      showWork(currentWork);
+    };
+
+    const openLightbox = () => {
+      if (typeof lightbox.showModal === "function") lightbox.showModal();
+      else lightbox.setAttribute("open", "");
+    };
+    const closeLightbox = () => {
+      if (typeof lightbox.close === "function") lightbox.close();
+      else lightbox.removeAttribute("open");
+    };
+
+    works.forEach((button, i) => {
+      const img = $("img", button);
+      const markMissing = () => button.classList.add("is-missing");
+      img.addEventListener("error", markMissing);
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute("src")) markMissing();
+
+      button.addEventListener("click", () => {
+        if (isMissing(i)) return;
+        showWork(i);
+        openLightbox();
+      });
+    });
+
+    $(".lb-close", lightbox).addEventListener("click", closeLightbox);
+    $(".lb-prev", lightbox).addEventListener("click", () => stepWork(-1));
+    $(".lb-next", lightbox).addEventListener("click", () => stepWork(1));
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox(); // click on the dark backdrop
+    });
+    lightbox.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") stepWork(1);
+      if (e.key === "ArrowLeft") stepWork(-1);
+    });
+  });
+
+  /* ---------- Stages stepper ---------- */
+
+  run("stages", () => {
+    const tabs = $$(".step-tab");
+    const panels = $$(".step-panel");
+    const track = $(".step-track");
+
+    const selectStage = (index, moveFocus = false) => {
+      tabs.forEach((tab, i) => {
+        const selected = i === index;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        tab.classList.toggle("is-done", i < index);
+        panels[i].hidden = !selected;
+      });
+      track.style.setProperty("--progress", String(index / (tabs.length - 1)));
+      if (moveFocus) tabs[index].focus();
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => selectStage(i));
+      tab.addEventListener("keydown", (e) => {
+        const last = tabs.length - 1;
+        const targets = {
+          ArrowRight: i === last ? 0 : i + 1,
+          ArrowLeft: i === 0 ? last : i - 1,
+          Home: 0,
+          End: last,
+        };
+        if (e.key in targets) {
+          e.preventDefault();
+          selectStage(targets[e.key], true);
+        }
+      });
+    });
+    $$("[data-goto-stage]").forEach((button) =>
+      button.addEventListener("click", () => selectStage(Number(button.dataset.gotoStage), true))
+    );
+    selectStage(0);
+  });
+
+  /* ---------- Pricing: filter + currency ---------- */
+
+  run("pricing", () => {
+    const applyFilter = (value) => {
+      priceCards.forEach((card) => {
+        card.hidden = !(value === "all" || card.dataset.type === value);
+      });
+      const radio = $(`input[name="filter"][value="${value}"]`);
+      if (radio) radio.checked = true;
+    };
+
+    $$('input[name="filter"]').forEach((radio) =>
+      radio.addEventListener("change", () => applyFilter(radio.value))
+    );
+
+    $$('input[name="currency"]').forEach((radio) =>
+      radio.addEventListener("change", () => {
+        currency = radio.value;
+        updatePrices();
+      })
+    );
+
+    // "See art prices" style buttons in the services section
+    $$("[data-filter]").forEach((link) =>
+      link.addEventListener("click", () => applyFilter(link.dataset.filter))
+    );
+
+    const startRadio = $(`input[name="currency"][value="${currency}"]`);
+    if (startRadio) startRadio.checked = true;
+  });
+
+  /* ---------- Order builder ---------- */
+
+  run("order form", () => {
+    const typeSelect = $("#order-type");
+    const rushBox = $("#order-rush");
+    const nameInput = $("#order-name");
+    const ideaInput = $("#order-idea");
+    const consentBox = $("#order-consent");
+    const estimateEl = $("#order-estimate");
+    const rushNote = $("#rush-note");
+    const deluxeNote = $("#deluxe-note");
+    const messageEl = $("#order-message");
+    const copyBtn = $("#copy-message");
+    const emailBtn = $("#email-message");
+    const hintEl = $("#order-hint");
+    const statusEl = $("#order-status");
+
+    const TYPE_LABEL = {
+      art: "art",
+      website: "website",
+      premium: "art + website",
+      deluxe: "gift website with face recognition",
+    };
+
+    const selectedCard = () => priceCards.find((card) => card.dataset.id === typeSelect.value);
+
+    const buildMessage = (card, estimate) => {
+      const name = nameInput.value.trim();
+      const idea = ideaInput.value.trim();
+      const lines = [
+        `Hi ${CONFIG.studioName}!`,
+        "",
+        `I'd like to order: ${card.dataset.name} (${TYPE_LABEL[card.dataset.type]}).`,
+        `Estimated price: ${estimate}`,
+        `Deadline: ${rushBox.checked ? "I need it in under 5 days (rush)" : "Standard (5 days)"}`,
+      ];
+      if (name) lines.push(`My name: ${name}`);
+      lines.push("", "About my idea:", idea || "(I'll add the details when we chat.)");
+      if (card.dataset.type === "deluxe") {
+        lines.push("", "I'll send photos of the person from as many angles as I can.");
+      }
+      lines.push("", "I've read the terms, and any reference photos I share have the consent of the person depicted.");
+      return lines.join("\n");
+    };
+
+    updateQuote = () => {
+      const card = selectedCard();
+      rushNote.hidden = !rushBox.checked;
+      deluxeNote.hidden = !(card && card.dataset.type === "deluxe");
+      statusEl.textContent = "";
+
+      if (!card) {
+        estimateEl.textContent = "Choose a type to see an estimate";
+        messageEl.value = "";
+      } else {
+        const estimate = formatRange(
+          Number(card.dataset.min),
+          Number(card.dataset.max),
+          currency,
+          card.hasAttribute("data-plus")
+        );
+        estimateEl.textContent = estimate;
+        messageEl.value = buildMessage(card, estimate);
+      }
+
+      const ready = Boolean(card) && consentBox.checked;
+      copyBtn.disabled = !ready;
+      emailBtn.disabled = !ready;
+      hintEl.textContent = !card
+        ? "Choose what you'd like to order to start your message."
+        : !consentBox.checked
+          ? "Tick the terms box to unlock the buttons."
+          : "";
+    };
+
+    [typeSelect, rushBox, nameInput, ideaInput, consentBox].forEach((el) => {
+      el.addEventListener(el.tagName === "SELECT" || el.type === "checkbox" ? "change" : "input", updateQuote);
+    });
+    $("#order-form").addEventListener("submit", (e) => e.preventDefault());
+
+    // "Order this" buttons on the price cards pre-select the type
+    $$("[data-choose]").forEach((link) =>
+      link.addEventListener("click", () => {
+        typeSelect.value = link.dataset.choose;
+        updateQuote();
+      })
+    );
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(messageEl.value);
+        statusEl.textContent = "Message copied. Paste it into a message to me!";
+      } catch (err) {
+        messageEl.focus();
+        messageEl.select();
+        statusEl.textContent = "Your message is selected. Press Ctrl+C (or Cmd+C) to copy it.";
+      }
+    });
+
+    const email = String(CONFIG.email || "").trim();
+    if (email) {
+      emailBtn.hidden = false;
+      emailBtn.addEventListener("click", () => {
+        const card = selectedCard();
+        if (!card) return;
+        const subject = `Commission request: ${card.dataset.name}`;
+        window.location.href =
+          `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageEl.value)}`;
+      });
+    }
+
+    updateQuote();
+  });
+
+  /* ---------- Terms: expand / collapse all ---------- */
+
+  run("terms", () => {
+    const termDetails = $$(".terms details");
+    const toggleTerms = $("#toggle-terms");
+
+    const syncLabel = () => {
+      toggleTerms.textContent = termDetails.every((d) => d.open) ? "Collapse all" : "Expand all";
+    };
+
+    toggleTerms.addEventListener("click", () => {
+      const openThem = termDetails.some((d) => !d.open);
+      termDetails.forEach((d) => { d.open = openThem; });
+      syncLabel();
+    });
+    termDetails.forEach((d) => d.addEventListener("toggle", syncLabel));
+  });
+
+  /* ---------- Start ---------- */
+
+  run("prices", updatePrices);
+})();
+  </script>
+</body>
+</html>
