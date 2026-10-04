@@ -140,7 +140,7 @@
               <li><strong>Full‑Scale:</strong> full proportion, detailed shading and lighting</li>
             </ul>
             <p class="service-note">You send reference photos of everyone in the picture, and they need to be okay with it.</p>
-            <p class="service-price">From <span class="money" data-min="200">$200 MXN</span></p>
+            <p class="service-price">From <span class="money" data-min="150" data-usd="8" data-eur="8">$150 MXN</span></p>
             <a class="btn" href="#pricing" data-filter="art">See art prices</a>
           </article>
 
@@ -154,7 +154,7 @@
               <li>Built with HTML and CSS</li>
               <li>Design included</li>
             </ul>
-            <p class="service-price">From <span class="money" data-min="600">$600 MXN</span></p>
+            <p class="service-price">From <span class="money" data-min="1200" data-usd="63" data-eur="60">$1200 MXN</span></p>
             <a class="btn" href="#pricing" data-filter="website">See website prices</a>
           </article>
 
@@ -173,7 +173,7 @@
               </ul>
             </div>
             <div class="fusion-buy">
-              <p class="service-price">From <span class="money" data-min="800">$800 MXN</span></p>
+              <p class="service-price">From <span class="money" data-min="1800" data-usd="95" data-eur="90">$1800 MXN</span></p>
               <a class="btn" href="#pricing" data-filter="premium">See Premium prices</a>
             </div>
           </article>
@@ -326,43 +326,43 @@
         </div>
 
         <div class="price-grid">
-          <article class="price-card" data-id="chibi" data-name="Chibi" data-type="art" data-min="200" data-max="250">
+          <article class="price-card" data-id="chibi" data-name="Chibi" data-type="art" data-min="150" data-max="200" data-usd="8–11" data-eur="8–10">
             <span class="badge badge-art">Art</span>
             <h3>Chibi</h3>
             <p>Simplified proportions, cute style</p>
-            <p class="price money" data-min="200" data-max="250">$200–250 MXN</p>
+            <p class="price money" data-min="150" data-max="200" data-usd="8–11" data-eur="8–10">$150–200 MXN</p>
             <a class="btn" href="#order" data-choose="chibi">Order this</a>
           </article>
 
-          <article class="price-card" data-id="medium" data-name="Medium" data-type="art" data-min="350" data-max="400">
+          <article class="price-card" data-id="medium" data-name="Medium" data-type="art" data-min="250" data-max="300" data-usd="13–16" data-eur="12–15">
             <span class="badge badge-art">Art</span>
             <h3>Medium</h3>
             <p>Balanced detail, proportional</p>
-            <p class="price money" data-min="350" data-max="400">$350–400 MXN</p>
+            <p class="price money" data-min="250" data-max="300" data-usd="13–16" data-eur="12–15">$250–300 MXN</p>
             <a class="btn" href="#order" data-choose="medium">Order this</a>
           </article>
 
-          <article class="price-card" data-id="full-scale" data-name="Full‑Scale" data-type="art" data-min="550" data-max="650">
+          <article class="price-card" data-id="full-scale" data-name="Full‑Scale" data-type="art" data-min="400" data-max="500" data-usd="21–27" data-eur="20–25">
             <span class="badge badge-art">Art</span>
             <h3>Full‑Scale</h3>
             <p>Full proportion, detailed shading &amp; lighting</p>
-            <p class="price money" data-min="550" data-max="650">$550–650 MXN</p>
+            <p class="price money" data-min="400" data-max="500" data-usd="21–27" data-eur="20–25">$400–500 MXN</p>
             <a class="btn" href="#order" data-choose="full-scale">Order this</a>
           </article>
 
-          <article class="price-card" data-id="website" data-name="Standard Website" data-type="website" data-min="600" data-max="800">
+          <article class="price-card" data-id="website" data-name="Standard Website" data-type="website" data-min="1200" data-max="1500" data-usd="63–79" data-eur="60–75">
             <span class="badge badge-web">Website</span>
             <h3>Standard Website</h3>
             <p>Basic site (1–2 pages, HTML/CSS, design)</p>
-            <p class="price money" data-min="600" data-max="800">$600–800 MXN</p>
+            <p class="price money" data-min="1200" data-max="1500" data-usd="63–79" data-eur="60–75">$1200–1500 MXN</p>
             <a class="btn" href="#order" data-choose="website">Order this</a>
           </article>
 
-          <article class="price-card" data-id="premium" data-name="Premium Fusion" data-type="premium" data-min="800" data-max="1200">
+          <article class="price-card" data-id="premium" data-name="Premium Fusion" data-type="premium" data-min="1800" data-max="2500" data-usd="95–132" data-eur="90–125">
             <span class="badge badge-premium">Premium</span>
             <h3>Premium Fusion</h3>
             <p>Website + custom art integration</p>
-            <p class="price money" data-min="800" data-max="1200">$800–1200 MXN</p>
+            <p class="price money" data-min="1800" data-max="2500" data-usd="95–132" data-eur="90–125">$1800–2500 MXN</p>
             <a class="btn" href="#order" data-choose="premium">Order this</a>
           </article>
 
@@ -573,15 +573,17 @@
        Put your email between the quotes on the "email" line,
        for example  email: "you@gmail.com",
        Leave it as "" to hide the "Email this to me" button.
-       USD and EUR prices are worked out from the MXN price
-       using the rates below (about 18.5 MXN per 1 USD and
-       20 MXN per 1 EUR). Change the numbers when rates move.
+       The Art, Website, and Premium prices have their own USD
+       and EUR amounts written in the price cards (data-usd and
+       data-eur). The rates below are used for any price that
+       doesn't (like Deluxe): about 19 MXN per 1 USD and
+       20 MXN per 1 EUR. Change the numbers when rates move.
        ===================================================== -->
   <script>
     window.MOCHI_CONFIG = {
-      email: "paktos@msn.com",
+      email: "",
       studioName: "Mochi Bun Studio",
-      rates: { MXN: 1, USD: 1 / 18.5, EUR: 1 / 20 },
+      rates: { MXN: 1, USD: 1 / 19, EUR: 1 / 20 },
       defaultCurrency: "MXN"
     };
   </script>
@@ -596,7 +598,7 @@
     {
       email: "",
       studioName: "Mochi Bun Studio",
-      rates: { MXN: 1, USD: 1 / 18.5, EUR: 1 / 20 },
+      rates: { MXN: 1, USD: 1 / 19, EUR: 1 / 20 },
       defaultCurrency: "MXN",
     },
     window.MOCHI_CONFIG
@@ -622,12 +624,15 @@
   const priceCards = $$(".price-card");
   let updateQuote = () => {}; // replaced by the order builder below
 
-  function formatRange(minMxn, maxMxn, cur, plus = false) {
+  // If a price has its own USD or EUR amount (data-usd / data-eur in the HTML), that exact
+  // text is shown. Otherwise the amount is worked out from the MXN price and the rates.
+  function formatRange(minMxn, maxMxn, cur, plus = false, exact = "") {
+    const suffix = cur === "MXN" ? " MXN" : "";
+    if (exact) return `${SYMBOL[cur]}${exact}${plus ? "+" : ""}${suffix}`;
     const rate = CONFIG.rates[cur];
     const lo = Math.round(minMxn * rate);
     const hi = Math.round(maxMxn * rate);
     const amount = lo === hi ? `${lo}` : `${lo}–${hi}`;
-    const suffix = cur === "MXN" ? " MXN" : "";
     return `${SYMBOL[cur]}${amount}${plus ? "+" : ""}${suffix}`;
   }
 
@@ -635,7 +640,7 @@
     $$(".money").forEach((el) => {
       const min = Number(el.dataset.min);
       const max = el.dataset.max ? Number(el.dataset.max) : min;
-      el.textContent = formatRange(min, max, currency, el.hasAttribute("data-plus"));
+      el.textContent = formatRange(min, max, currency, el.hasAttribute("data-plus"), el.dataset[currency.toLowerCase()]);
     });
     updateQuote();
   }
@@ -910,7 +915,8 @@
           Number(card.dataset.min),
           Number(card.dataset.max),
           currency,
-          card.hasAttribute("data-plus")
+          card.hasAttribute("data-plus"),
+          card.dataset[currency.toLowerCase()]
         );
         estimateEl.textContent = estimate;
         messageEl.value = buildMessage(card, estimate);
