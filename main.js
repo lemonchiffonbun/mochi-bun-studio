@@ -1,5 +1,5 @@
 /* ==========================================================
-   Mochi Bun Studio: interactivity
+  Strawberry Mocha Studio: interactivity
    No libraries needed. Edit the CONFIG block below first.
    ========================================================== */
 
@@ -12,7 +12,7 @@
     // Leave it empty ("") to hide that button; visitors can still copy the message.
     email: "paktos@msn.com",
 
-    studioName: "Mochi Bun Studio",
+    studioName: "Strawberry Mocha Studio",
 
     // Prices are written in MXN in index.html. These turn them into approximate USD and EUR.
     // "1 / 18.5" means about 18.5 MXN per 1 USD. Update the numbers when the exchange rate moves.
